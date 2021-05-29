@@ -1,0 +1,18 @@
+<template>
+    <lightning-card >
+        <lightning-button
+        class="slds-m-left_x-small" 
+        variant="brand" 
+        label="Ver Factura" 
+        title="Ver Factura" 
+        onclick={obtenerFacturaBase64}></lightning-button>
+
+        <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+
+        <template if:true={verFactura}>
+            <iframe src={facturaURL}  width='100%' height='500px'></iframe>
+        </template>
+</lightning-card>
+</template>
